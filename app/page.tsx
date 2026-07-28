@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const media = (name: string) => `/midias/${name}`;
-const documentUrl = (name: string) => `/documentos/${name}`;
+const media = (name: string) => `${import.meta.env.BASE_URL}midias/${name}`;
+const documentUrl = (name: string) => `${import.meta.env.BASE_URL}documentos/${name}`;
 
 type Collection = {
   title: string;
