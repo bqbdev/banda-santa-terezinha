@@ -37,7 +37,7 @@ const collections: Collection[] = [
   {
     title: "Concerto de 25 anos",
     subtitle: "Março de 2026 · 11 fotos",
-    cover: "março-concerto-de-25-anos.jpeg",
+    cover: "Foto 5 - Março.jpeg",
     images: [
       "março-concerto-de-25-anos.jpeg",
       "Foto 1 - Coral Infanto Juvenil - Março.jpeg",
@@ -288,7 +288,7 @@ export default function Home() {
 
       <section className="history" id="historia">
         <div className="history-image">
-          <img src={media("março-concerto-de-25-anos.jpeg")} alt="Concerto comemorativo de 25 anos" />
+          <img src={media("Foto 5 - Março.jpeg")} alt="Banda Santa Terezinha durante o concerto comemorativo de 25 anos" />
           <span>Concerto de 25 anos · 2026</span>
         </div>
         <div className="history-content">
