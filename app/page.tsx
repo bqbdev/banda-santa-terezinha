@@ -417,6 +417,10 @@ export default function Home() {
           <div><strong>Banda Santa Terezinha</strong><small>Associação Musical · Mogi Guaçu</small></div>
         </div>
         <p>© 2026 Banda Santa Terezinha. Música, educação e transformação social.</p>
+        <a className="footer-credit" href="https://bqsystems.com.br" target="_blank" rel="noreferrer" aria-label="Site desenvolvido por BQ Systems">
+          <span>Desenvolvido por</span>
+          <img src={media("logobq.png")} alt="BQ Systems" />
+        </a>
         <a href="#inicio">Voltar ao topo ↑</a>
       </footer>
 
