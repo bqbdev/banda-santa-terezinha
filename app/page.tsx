@@ -145,7 +145,7 @@ const collections: Collection[] = [
     images: sequence("Recital de Percussão ", 6),
   },
   {
-    title: "Banda na Escola CAIC",
+    title: "Banda Escola no CAIC",
     subtitle: "Apresentação no CAIC · 8 fotos",
     cover: "banda-escola-caic-cartaz.png",
     images: [
@@ -193,10 +193,22 @@ const documents = [
     meta: "Parceria pública · 2024",
   },
   {
+    category: "Prestação de Contas",
+    title: "Termo de Aditamento 02/2024",
+    file: "03 - TERMO DE ADITAMENTO 02 2024.pdf",
+    meta: "Parceria pública · 2024",
+  },
+  {
     category: "Emendas Parlamentares",
     title: "Termo de Aditamento 03/2025",
     file: "04 - TERMO DE ADITAMENTO 03 2025.pdf",
     meta: "Parceria pública · 2025",
+  },
+  {
+    category: "Emendas Parlamentares",
+    title: "Termo de Fomento 21/2024",
+    file: "TERMO DE FOMENTO 21-2024 13814839-2024061715481446950051Q82W.pdf",
+    meta: "Fomento à atividade cultural · 2024",
   },
   {
     category: "Certificados e Selos",
@@ -414,7 +426,6 @@ export default function Home() {
                       {isExpanded ? "Ocultar" : "Ver na página"} <span>{isExpanded ? "↑" : "↓"}</span>
                     </button>
                     <a href={documentUrl(document.file)} target="_blank" rel="noreferrer">Abrir PDF <span>↗</span></a>
-                    <a href={documentUrl(document.file)} download>Baixar <span>↓</span></a>
                   </div>
                 </article>
                 {isExpanded && (
