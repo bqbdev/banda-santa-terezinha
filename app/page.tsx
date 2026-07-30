@@ -198,6 +198,9 @@ const activities = [
 ];
 
 export default function Home() {
+  const isTransparencyPage = window.location.pathname.includes("/transparencia");
+  const homeUrl = import.meta.env.BASE_URL;
+  const transparencyUrl = `${import.meta.env.BASE_URL}transparencia/`;
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCollection, setActiveCollection] = useState<Collection | null>(null);
   const [activeImage, setActiveImage] = useState(0);
@@ -235,8 +238,8 @@ export default function Home() {
 
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Banda Santa Terezinha — início">
+      <header className="site-header" id="inicio">
+        <a className="brand" href={homeUrl} aria-label="Banda Santa Terezinha — início">
           <img src={media("logo.png")} alt="" />
           <span>
             <b>Banda Santa Terezinha</b>
@@ -244,17 +247,18 @@ export default function Home() {
           </span>
         </a>
         <nav className={menuOpen ? "nav-open" : ""} aria-label="Navegação principal">
-          <a href="#historia" onClick={() => setMenuOpen(false)}>História</a>
-          <a href="#atividades" onClick={() => setMenuOpen(false)}>Atividades</a>
-          <a href="#acervo" onClick={() => setMenuOpen(false)}>Acervo</a>
-          <a href="#transparencia" onClick={() => setMenuOpen(false)}>Transparência</a>
-          <a className="nav-contact" href="#contato" onClick={() => setMenuOpen(false)}>Contato</a>
+          <a href={`${homeUrl}#historia`} onClick={() => setMenuOpen(false)}>História</a>
+          <a href={`${homeUrl}#atividades`} onClick={() => setMenuOpen(false)}>Atividades</a>
+          <a href={`${homeUrl}#acervo`} onClick={() => setMenuOpen(false)}>Acervo</a>
+          <a href={transparencyUrl} onClick={() => setMenuOpen(false)}>Transparência</a>
+          <a className="nav-contact" href={`${homeUrl}#contato`} onClick={() => setMenuOpen(false)}>Contato</a>
         </nav>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menu" aria-expanded={menuOpen}>
           <span /><span />
         </button>
       </header>
 
+      {!isTransparencyPage && (<>
       <section className="hero" id="inicio">
         <img className="hero-image" src={media("foto-banner.jpeg")} alt="Músicos da Banda Santa Terezinha em apresentação" />
         <div className="hero-overlay" />
@@ -350,8 +354,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </>)}
 
-      <section className="transparency section-shell" id="transparencia">
+      {isTransparencyPage && (<section className="transparency section-shell transparency-page" id="transparencia">
         <div className="section-topline">
           <div>
             <div className="section-heading">
@@ -378,9 +383,9 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
+      </section>)}
 
-      <section className="contact" id="contato">
+      {!isTransparencyPage && (<section className="contact" id="contato">
         <div className="contact-copy">
           <div className="section-heading">
             <span className="section-number">06</span>
@@ -409,7 +414,7 @@ export default function Home() {
             <a href="https://www.facebook.com/share/1BdbBbjuWu/" target="_blank" rel="noreferrer">Facebook <span>↗</span></a>
           </div>
         </div>
-      </section>
+      </section>)}
 
       <footer>
         <div className="footer-brand">

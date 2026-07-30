@@ -41,7 +41,7 @@ img { display: block; max-width: 100%; }
   background: rgba(245, 241, 232, 0.95);
   border-bottom: 1px solid var(--line);
   display: flex;
-  height: 92px;
+  height: 132px;
   justify-content: space-between;
   left: 0;
   padding: 0 clamp(24px, 5vw, 80px);
@@ -66,7 +66,7 @@ nav a:hover { color: #a87820; }
   height: min(880px, 100vh);
   min-height: 720px;
   overflow: hidden;
-  padding-top: 92px;
+  padding-top: 132px;
   position: relative;
 }
 .hero-image { height: 100%; inset: 0; object-fit: cover; object-position: center 30%; position: absolute; width: 100%; }
@@ -223,12 +223,14 @@ footer > a { border-bottom: 1px solid rgba(255,255,255,.4); padding-bottom: 4px;
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  height: 86px;
+  height: 112px;
   object-fit: contain;
   padding: 0;
-  width: 86px;
+  width: 112px;
 }
-.brand b { color: var(--cor-azul-escuro); font-size: 22px; }
+.brand { gap: 20px; }
+.brand b { color: var(--cor-azul-escuro); font-size: 27px; }
+.brand small { font-size: 9px; }
 .brand small { color: var(--cor-cinza); }
 nav a {
   color: var(--cor-texto);
@@ -413,6 +415,10 @@ blockquote { border-left-color: var(--cor-primaria); }
 .collection-text i { color: #9BD4FF; }
 
 .transparency { background: var(--cor-branca); }
+.transparency-page {
+  min-height: calc(100vh - 190px);
+  padding-top: 220px;
+}
 .document-list { border-top: 0; }
 .document-row {
   background: var(--cor-branca);
@@ -468,6 +474,7 @@ footer { background: var(--cor-azul-escuro); }
   object-fit: contain;
   padding: 0;
   width: 112px;
+  filter: brightness(0) invert(1);
 }
 .footer-brand strong { font-size: 22px; }
 .footer-brand small { color: rgba(255,255,255,.7); }
@@ -491,8 +498,9 @@ footer > a:hover { color: var(--cor-secundaria); }
 .footer-credit img {
   background: transparent;
   border-radius: 0;
-  height: 48px;
-  max-width: 150px;
+  filter: brightness(0) invert(1);
+  height: 30px;
+  max-width: 105px;
   object-fit: contain;
   padding: 0;
   width: auto;
@@ -522,14 +530,14 @@ footer > a:hover { color: var(--cor-secundaria); }
 .document-modal iframe { border-color: var(--cor-borda); border-radius: 14px; }
 
 @media (max-width: 980px) {
-  .site-header { height: 78px; padding: 0 22px; }
-  .brand img { height: 64px; width: 64px; }
-  .brand b { font-size: 17px; }
-  nav { background: var(--cor-branca); border-bottom: 1px solid var(--cor-borda); box-shadow: var(--sombra-suave); display: none; flex-direction: column; left: 0; padding: 35px; position: absolute; right: 0; top: 78px; }
+  .site-header { height: 112px; padding: 0 22px; }
+  .brand img { height: 94px; width: 94px; }
+  .brand b { font-size: 21px; }
+  nav { background: var(--cor-branca); border-bottom: 1px solid var(--cor-borda); box-shadow: var(--sombra-suave); display: none; flex-direction: column; left: 0; padding: 35px; position: absolute; right: 0; top: 112px; }
   nav.nav-open { display: flex; }
   .menu-button { background: transparent; border: 0; display: flex; flex-direction: column; gap: 7px; padding: 10px 0 10px 10px; }
   .menu-button span { background: var(--cor-azul-escuro); display: block; height: 2px; width: 25px; }
-  .hero { min-height: 720px; padding-top: 78px; }
+  .hero { min-height: 720px; padding-top: 112px; }
   .hero-content { border-left-width: 2px; padding: 18px 20px; }
   .anniversary-seal { height: 95px; right: 5%; width: 95px; }
   .intro { gap: 45px; grid-template-columns: 1fr; }
@@ -542,7 +550,9 @@ footer > a:hover { color: var(--cor-secundaria); }
 }
 
 @media (max-width: 640px) {
-  .brand b { font-size: 17px; }
+  .brand { gap: 10px; }
+  .brand img { height: 82px; width: 82px; }
+  .brand b { font-size: 18px; }
   .brand small { font-size: 7px; }
   .hero h1 { line-height: .84; }
   .hero-content { top: 46%; }
@@ -567,13 +577,15 @@ footer > a:hover { color: var(--cor-secundaria); }
   .contact-details a { font-size: 18px; overflow-wrap: anywhere; }
   footer { align-items: flex-start; flex-direction: column; gap: 25px; }
   .footer-brand img { height: 96px; width: 96px; }
-  .gallery-stage { height: calc(100vh - 180px); padding: 70px 45px 10px; }
-  .gallery-stage img { max-width: calc(100vw - 90px); }
+  .gallery-modal { display: flex; flex-direction: column; height: 100dvh; }
+  .gallery-stage { flex: 1 1 auto; height: auto; min-height: 0; padding: 68px 42px 8px; }
+  .gallery-stage img { height: auto; max-height: 100%; max-width: 100%; object-fit: contain; width: auto; }
   .gallery-nav { padding: 12px; }
   .gallery-nav.prev { left: 2px; }
   .gallery-nav.next { right: 2px; }
   .gallery-info { padding-left: 20px; padding-right: 20px; }
   .thumbnail-strip { padding-left: 20px; padding-right: 20px; }
+  .transparency-page { padding-top: 170px; }
   .document-modal { padding: 10px; }
   .document-modal-head { align-items: flex-start; gap: 14px; }
   .document-modal-head h3 { font-size: 18px; }
