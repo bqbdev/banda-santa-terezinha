@@ -400,7 +400,7 @@ export default function Home() {
             </div>
             <h2>Transparência<br /><em>em cada nota.</em></h2>
           </div>
-          <p>Consulte os documentos institucionais, administrativos e de prestação de contas. Todos podem ser visualizados online ou baixados.</p>
+          <p>Consulte os documentos institucionais, administrativos e de prestação de contas. Todos podem ser visualizados online.</p>
         </div>
         <div className="transparency-notice">
           <span>Informativo institucional</span>
