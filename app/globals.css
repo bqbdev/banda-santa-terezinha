@@ -212,7 +212,7 @@ footer > a { border-bottom: 1px solid rgba(255,255,255,.4); padding-bottom: 4px;
 
 /* Identidade visual Banda Santa Terezinha */
 .site-header {
-  background: rgba(255, 255, 255, .96);
+  background: var(--cor-branca);
   border-bottom-color: var(--cor-borda);
   box-shadow: 0 8px 30px rgba(10, 101, 234, .08);
   backdrop-filter: blur(14px);
@@ -490,12 +490,16 @@ blockquote { border-left-color: var(--cor-primaria); }
 .contact-details a { transition: color .25s ease; }
 .contact-details a:hover { color: #B9E1FF; }
 
-footer { background: var(--cor-azul-escuro); }
+footer {
+  background: var(--cor-branca);
+  border-top-color: var(--cor-borda);
+  color: var(--cor-azul-escuro);
+}
 .footer-brand {
   background: transparent;
   border-radius: 0;
   box-shadow: none;
-  color: var(--cor-branca);
+  color: var(--cor-azul-escuro);
   gap: 18px;
   padding: 0;
 }
@@ -506,13 +510,17 @@ footer { background: var(--cor-azul-escuro); }
   object-fit: contain;
   padding: 0;
   width: 112px;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 .footer-brand strong { font-size: 22px; }
-.footer-brand small { color: rgba(255,255,255,.7); }
-footer p, footer > a { color: rgba(255,255,255,.82); }
+.footer-brand small { color: var(--cor-cinza); }
+footer p, footer > a { color: var(--cor-cinza); }
 footer > p { font-size: 10px; line-height: 1.5; }
-footer > a:hover { color: var(--cor-secundaria); }
+footer > a {
+  border-bottom-color: var(--cor-primaria);
+  color: var(--cor-azul-escuro);
+}
+footer > a:hover { color: var(--cor-primaria); }
 .footer-credit {
   align-items: center;
   border: 0;
@@ -522,7 +530,7 @@ footer > a:hover { color: var(--cor-secundaria); }
   padding: 0;
 }
 .footer-credit span {
-  color: rgba(255,255,255,.68);
+  color: var(--cor-cinza);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -531,7 +539,7 @@ footer > a:hover { color: var(--cor-secundaria); }
 .footer-credit img {
   background: transparent;
   border-radius: 0;
-  filter: brightness(0) invert(1);
+  filter: none;
   height: 40px;
   max-width: 130px;
   object-fit: contain;
