@@ -62,6 +62,36 @@ const collections: Collection[] = [
     ],
   },
   {
+    title: "Banda na Escola — Abril",
+    subtitle: "28/04/2026 · 5 fotos",
+    cover: "abril Projeto Banda na Escola.jpeg",
+    images: [
+      "abril Projeto Banda na Escola.jpeg",
+      "Foto 5 - Abril.jpeg",
+      "Foto 6 - Abril.jpeg",
+      "Foto 7 - Abril.jpeg",
+      "Foto 8 - Abril.jpeg",
+    ],
+  },
+  {
+    title: "Banda na Escola — Maio",
+    subtitle: "12/05/2026 · 7 fotos",
+    cover: "maio banda na escola .jpeg",
+    images: [
+      "maio banda na escola .jpeg",
+      ...sequence("Foto ", 6).map((name) => name.replace(".jpeg", " - Maio.jpeg")),
+    ],
+  },
+  {
+    title: "Banda na Escola — Junho",
+    subtitle: "23/06/2026 · 7 fotos",
+    cover: "junho banda na escola .jpeg",
+    images: [
+      "junho banda na escola .jpeg",
+      ...sequence("Foto ", 6).map((name) => name.replace(".jpeg", " - Junho.jpeg")),
+    ],
+  },
+  {
     title: "Eventos de Julho",
     subtitle: "Julho de 2026 · 1 imagem",
     cover: "julho 2026.jpeg",
@@ -115,23 +145,7 @@ const collections: Collection[] = [
     images: sequence("Recital de Percussão ", 6),
   },
   {
-    title: "Banda Escola",
-    subtitle: "28/04, 12/05 e 23/06 de 2026 · 19 fotos",
-    cover: "abril Projeto Banda na Escola.jpeg",
-    images: [
-      "abril Projeto Banda na Escola.jpeg",
-      "Foto 5 - Abril.jpeg",
-      "Foto 6 - Abril.jpeg",
-      "Foto 7 - Abril.jpeg",
-      "Foto 8 - Abril.jpeg",
-      "maio banda na escola .jpeg",
-      ...sequence("Foto ", 6).map((name) => name.replace(".jpeg", " - Maio.jpeg")),
-      "junho banda na escola .jpeg",
-      ...sequence("Foto ", 6).map((name) => name.replace(".jpeg", " - Junho.jpeg")),
-    ],
-  },
-  {
-    title: "Banda Escola CAIC",
+    title: "Banda na Escola CAIC",
     subtitle: "Apresentação no CAIC · 8 fotos",
     cover: "banda-escola-caic-cartaz.png",
     images: [
