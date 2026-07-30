@@ -287,7 +287,7 @@ export default function Home() {
         <div className="intro-statement">
           <h2>Mais do que ensinar música, formamos vínculos, ampliamos horizontes e revelamos <em>novos talentos.</em></h2>
           <div className="stats">
-            <div><strong>75</strong><span>alunos atendidos</span></div>
+            <div><strong>75</strong><span>alunos atendidos/mês</span></div>
             <div><strong>30</strong><span>músicos na banda</span></div>
             <div><strong>25</strong><span>anos de história</span></div>
           </div>
