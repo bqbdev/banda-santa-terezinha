@@ -54,34 +54,12 @@ const collections: Collection[] = [
   },
   {
     title: "Encontro de Coros Guaçuanos",
-    subtitle: "Abril de 2026 · 9 fotos",
+    subtitle: "Abril de 2026 · 5 fotos",
     cover: "ABRIL 2026 CORAL INFANTO-JUVENIL NO ENCONTRO DE COROS GUAÇUANOS.jpeg",
     images: [
       "ABRIL 2026 CORAL INFANTO-JUVENIL NO ENCONTRO DE COROS GUAÇUANOS.jpeg",
-      ...sequence("Foto ", 8).map((name) => name.replace(".jpeg", " - Abril.jpeg")),
+      ...sequence("Foto ", 4).map((name) => name.replace(".jpeg", " - Abril.jpeg")),
     ],
-  },
-  {
-    title: "Banda na Escola",
-    subtitle: "Abril a junho de 2026 · 3 fotos",
-    cover: "abril Projeto Banda na Escola.jpeg",
-    images: [
-      "abril Projeto Banda na Escola.jpeg",
-      "maio banda na escola .jpeg",
-      "junho banda na escola .jpeg",
-    ],
-  },
-  {
-    title: "Atividades de Maio",
-    subtitle: "Maio de 2026 · 6 fotos",
-    cover: "Foto 1 - Maio.jpeg",
-    images: sequence("Foto ", 6).map((name) => name.replace(".jpeg", " - Maio.jpeg")),
-  },
-  {
-    title: "Atividades de Junho",
-    subtitle: "Junho de 2026 · 6 fotos",
-    cover: "Foto 1 - Junho.jpeg",
-    images: sequence("Foto ", 6).map((name) => name.replace(".jpeg", " - Junho.jpeg")),
   },
   {
     title: "Eventos de Julho",
@@ -139,6 +117,22 @@ const collections: Collection[] = [
     subtitle: "Prática instrumental · 6 fotos",
     cover: "Recital de Percussão 1.jpeg",
     images: sequence("Recital de Percussão ", 6),
+  },
+  {
+    title: "Banda na Escola",
+    subtitle: "Abril a junho de 2026 · 19 fotos",
+    cover: "abril Projeto Banda na Escola.jpeg",
+    images: [
+      "abril Projeto Banda na Escola.jpeg",
+      "Foto 5 - Abril.jpeg",
+      "Foto 6 - Abril.jpeg",
+      "Foto 7 - Abril.jpeg",
+      "Foto 8 - Abril.jpeg",
+      "maio banda na escola .jpeg",
+      ...sequence("Foto ", 6).map((name) => name.replace(".jpeg", " - Maio.jpeg")),
+      "junho banda na escola .jpeg",
+      ...sequence("Foto ", 6).map((name) => name.replace(".jpeg", " - Junho.jpeg")),
+    ],
   },
 ];
 
