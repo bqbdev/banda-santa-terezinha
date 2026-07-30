@@ -419,6 +419,31 @@ blockquote { border-left-color: var(--cor-primaria); }
   min-height: calc(100vh - 190px);
   padding-top: 220px;
 }
+.transparency-notice {
+  background: linear-gradient(135deg, var(--cor-fundo-claro), var(--cor-branca));
+  border: 1px solid var(--cor-borda);
+  border-left: 5px solid var(--cor-primaria);
+  border-radius: 16px;
+  box-shadow: var(--sombra-suave);
+  margin: 0 0 52px;
+  padding: clamp(24px, 4vw, 42px);
+}
+.transparency-notice span {
+  color: var(--cor-primaria);
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.transparency-notice p {
+  color: var(--cor-texto);
+  font-family: var(--font-display), serif;
+  font-size: clamp(19px, 2vw, 27px);
+  line-height: 1.55;
+  margin: 0;
+}
 .document-list { border-top: 0; }
 .document-item { margin-bottom: 14px; }
 .document-row {

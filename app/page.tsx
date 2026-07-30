@@ -63,13 +63,9 @@ const collections: Collection[] = [
   },
   {
     title: "Eventos de Julho",
-    subtitle: "Julho de 2026 · 9 fotos",
+    subtitle: "Julho de 2026 · 1 imagem",
     cover: "julho 2026.jpeg",
-    images: [
-      "julho 2026.jpeg",
-      "2° Evento de Julho.jpeg",
-      ...sequence("2° Evento de Julho ", 7),
-    ],
+    images: ["julho 2026.jpeg"],
   },
   {
     title: "Recital de Flauta Doce",
@@ -379,6 +375,10 @@ export default function Home() {
             <h2>Transparência<br /><em>em cada nota.</em></h2>
           </div>
           <p>Consulte os documentos institucionais, administrativos e de prestação de contas. Todos podem ser visualizados online ou baixados.</p>
+        </div>
+        <div className="transparency-notice">
+          <span>Informativo institucional</span>
+          <p>&quot;A Banda Santa Terezinha (CNPJ: 04.404.840/0001-70) informa ao público, aos seus parceiros e à comunidade que encontra-se atualmente em processo de captação de recursos junto ao Ministério da Cultura, viabilizado por meio da Emenda Parlamentar nº 15270007. Essa iniciativa reforça nosso compromisso com a transparência institucional e tem como objetivo fundamental fortalecer nossas atividades culturais e musicais.&quot;</p>
         </div>
         <div className="document-list">
           {documents.map((document, index) => {
