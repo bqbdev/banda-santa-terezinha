@@ -198,7 +198,8 @@ const activities = [
   ["02", "Coral infantojuvenil", "Formação vocal, repertório coletivo e apresentações que fortalecem a confiança e o sentimento de pertencimento."],
   ["03", "Prática instrumental", "Orientação teórica e prática em madeiras, metais e percussão, com acompanhamento de educadores musicais."],
   ["04", "Banda Escola", "Etapa de formação para novos instrumentistas, com ensaios quinzenais e preparação para integrar a banda principal."],
-  ["05", "Concertos e recitais", "Apresentações em Mogi Guaçu e outras cidades, aproximando a comunidade da música instrumental e coral."],
+  ["05", "Banda Musical", "A prática em grupo tem como objetivo desenvolver a execução musical coletiva, promovendo a integração entre os músicos, o aperfeiçoamento técnico e a interpretação do repertório para banda musical. Durante os ensaios, são trabalhados aspectos como afinação, ritmo, equilíbrio sonoro, leitura musical, percepção auditiva, disciplina, trabalho em equipe e preparação para apresentações públicas. A atividade contribui para a formação artística, cultural e social dos participantes, fortalecendo valores como responsabilidade, cooperação e compromisso com a prática musical."],
+  ["06", "Concertos e recitais", "Apresentações em Mogi Guaçu e outras cidades, aproximando a comunidade da música instrumental e coral."],
 ];
 
 export default function Home() {
