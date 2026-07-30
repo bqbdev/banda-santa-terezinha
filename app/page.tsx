@@ -209,20 +209,19 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCollection, setActiveCollection] = useState<Collection | null>(null);
   const [activeImage, setActiveImage] = useState(0);
-  const [activeDocument, setActiveDocument] = useState<(typeof documents)[number] | null>(null);
+  const [expandedDocument, setExpandedDocument] = useState<string | null>(null);
 
   useEffect(() => {
-    document.body.style.overflow = activeCollection || activeDocument ? "hidden" : "";
+    document.body.style.overflow = activeCollection ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [activeCollection, activeDocument]);
+  }, [activeCollection]);
 
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setActiveCollection(null);
-        setActiveDocument(null);
       }
       if (!activeCollection) return;
       if (event.key === "ArrowRight") {
@@ -373,20 +372,40 @@ export default function Home() {
           <p>Consulte os documentos institucionais, administrativos e de prestação de contas. Todos podem ser visualizados online ou baixados.</p>
         </div>
         <div className="document-list">
-          {documents.map((document, index) => (
-            <article className="document-row" key={document.file}>
-              <span className="doc-index">{String(index + 1).padStart(2, "0")}</span>
-              <div className="doc-main">
-                <small>{document.category}</small>
-                <h3>{document.title}</h3>
-                <p>{document.meta}</p>
+          {documents.map((document, index) => {
+            const isExpanded = expandedDocument === document.file;
+            return (
+              <div className={`document-item${isExpanded ? " expanded" : ""}`} key={document.file}>
+                <article className="document-row">
+                  <span className="doc-index">{String(index + 1).padStart(2, "0")}</span>
+                  <div className="doc-main">
+                    <small>{document.category}</small>
+                    <h3>{document.title}</h3>
+                    <p>{document.meta}</p>
+                  </div>
+                  <div className="doc-actions">
+                    <button
+                      onClick={() => setExpandedDocument(isExpanded ? null : document.file)}
+                      aria-expanded={isExpanded}
+                    >
+                      {isExpanded ? "Ocultar" : "Ver na página"} <span>{isExpanded ? "↑" : "↓"}</span>
+                    </button>
+                    <a href={documentUrl(document.file)} target="_blank" rel="noreferrer">Abrir PDF <span>↗</span></a>
+                    <a href={documentUrl(document.file)} download>Baixar <span>↓</span></a>
+                  </div>
+                </article>
+                {isExpanded && (
+                  <div className="document-inline-preview">
+                    <iframe src={documentUrl(document.file)} title={`Visualização de ${document.title}`} />
+                    <p>
+                      Se o PDF não aparecer neste dispositivo, use
+                      {" "}<a href={documentUrl(document.file)} target="_blank" rel="noreferrer">Abrir PDF</a>.
+                    </p>
+                  </div>
+                )}
               </div>
-              <div className="doc-actions">
-                <button onClick={() => setActiveDocument(document)}>Visualizar <span>↗</span></button>
-                <a href={documentUrl(document.file)} download>Baixar <span>↓</span></a>
-              </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
       </section>)}
 
@@ -456,18 +475,6 @@ export default function Home() {
         </div>
       )}
 
-      {activeDocument && (
-        <div className="document-modal" role="dialog" aria-modal="true" aria-label={activeDocument.title}>
-          <div className="document-modal-head">
-            <div><small>{activeDocument.category}</small><h3>{activeDocument.title}</h3></div>
-            <div>
-              <a href={documentUrl(activeDocument.file)} download>Baixar PDF ↓</a>
-              <button onClick={() => setActiveDocument(null)} aria-label="Fechar documento">×</button>
-            </div>
-          </div>
-          <iframe src={documentUrl(activeDocument.file)} title={activeDocument.title} />
-        </div>
-      )}
     </main>
   );
 }

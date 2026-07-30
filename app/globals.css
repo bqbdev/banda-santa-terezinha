@@ -420,15 +420,47 @@ blockquote { border-left-color: var(--cor-primaria); }
   padding-top: 220px;
 }
 .document-list { border-top: 0; }
+.document-item { margin-bottom: 14px; }
 .document-row {
   background: var(--cor-branca);
   border: 1px solid var(--cor-borda);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(10, 101, 234, .06);
-  margin-bottom: 14px;
+  margin-bottom: 0;
   padding: 24px;
   transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
 }
+.document-item.expanded .document-row {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.document-inline-preview {
+  background: var(--cor-fundo-claro);
+  border: 1px solid var(--cor-borda);
+  border-top: 0;
+  border-radius: 0 0 16px 16px;
+  padding: 18px;
+}
+.document-inline-preview iframe {
+  background: var(--cor-branca);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  display: block;
+  height: min(78vh, 900px);
+  width: 100%;
+}
+.document-inline-preview p {
+  color: var(--cor-cinza);
+  display: none;
+  font-size: 11px;
+  margin: 12px 0 0;
+}
+.document-inline-preview p a {
+  color: var(--cor-primaria);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.doc-actions { flex-wrap: wrap; justify-content: flex-end; }
 .document-row:hover {
   border-color: var(--cor-secundaria);
   box-shadow: var(--sombra-suave);
@@ -572,8 +604,11 @@ footer > a:hover { color: var(--cor-secundaria); }
   .collection-card { height: 390px; }
   .archive { padding-bottom: 75px; padding-top: 85px; }
   .document-row { align-items: start; grid-template-columns: 35px 1fr; }
-  .doc-actions { grid-column: 2; }
-  .doc-actions button, .doc-actions a { flex: 1; }
+  .doc-actions { grid-column: 2; justify-content: flex-start; }
+  .doc-actions button, .doc-actions a { flex: 1 1 130px; text-align: center; }
+  .document-inline-preview { padding: 10px; }
+  .document-inline-preview iframe { height: 68dvh; }
+  .document-inline-preview p { display: block; }
   .contact { padding-bottom: 85px; padding-top: 85px; }
   .contact-details a { font-size: 18px; overflow-wrap: anywhere; }
   footer { align-items: flex-start; flex-direction: column; gap: 25px; }
