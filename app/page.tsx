@@ -161,7 +161,15 @@ const collections: Collection[] = [
   },
 ];
 
-const documents = [
+type TransparencyDocument = {
+  category: string;
+  title: string;
+  meta: string;
+  file?: string;
+  externalUrl?: string;
+};
+
+const documents: TransparencyDocument[] = [
   {
     category: "Estatuto",
     title: "Estatuto Social",
@@ -221,6 +229,12 @@ const documents = [
     title: "Lei de Utilidade Pública",
     file: "16 - LEI DE UTILIDADE PÚBLICA.pdf",
     meta: "Título concedido em 2005",
+  },
+  {
+    category: "Legislação",
+    title: "ECA Digital — Lei nº 15.211/2025",
+    externalUrl: "https://www.in.gov.br/en/web/dou/-/lei-n-15.211-de-17-de-setembro-de-2025-656579619",
+    meta: "Publicação oficial no Diário Oficial da União",
   },
 ];
 
@@ -408,9 +422,11 @@ export default function Home() {
         </div>
         <div className="document-list">
           {documents.map((document, index) => {
-            const isExpanded = expandedDocument === document.file;
+            const isExternal = Boolean(document.externalUrl);
+            const isExpanded = Boolean(document.file) && expandedDocument === document.file;
+            const documentKey = document.file ?? document.externalUrl ?? document.title;
             return (
-              <div className={`document-item${isExpanded ? " expanded" : ""}`} key={document.file}>
+              <div className={`document-item${isExpanded ? " expanded" : ""}`} key={documentKey}>
                 <article className="document-row">
                   <span className="doc-index">{String(index + 1).padStart(2, "0")}</span>
                   <div className="doc-main">
@@ -419,16 +435,23 @@ export default function Home() {
                     <p>{document.meta}</p>
                   </div>
                   <div className="doc-actions">
-                    <button
-                      onClick={() => setExpandedDocument(isExpanded ? null : document.file)}
-                      aria-expanded={isExpanded}
-                    >
-                      {isExpanded ? "Ocultar" : "Ver na página"} <span>{isExpanded ? "↑" : "↓"}</span>
-                    </button>
-                    <a href={documentUrl(document.file)} target="_blank" rel="noreferrer">Abrir PDF <span>↗</span></a>
+                    {!isExternal && document.file && (
+                      <>
+                        <button
+                          onClick={() => setExpandedDocument(isExpanded ? null : document.file ?? null)}
+                          aria-expanded={isExpanded}
+                        >
+                          {isExpanded ? "Ocultar" : "Ver na página"} <span>{isExpanded ? "↑" : "↓"}</span>
+                        </button>
+                        <a href={documentUrl(document.file)} target="_blank" rel="noreferrer">Abrir PDF <span>↗</span></a>
+                      </>
+                    )}
+                    {isExternal && document.externalUrl && (
+                      <a href={document.externalUrl} target="_blank" rel="noreferrer">Abrir no site oficial <span>↗</span></a>
+                    )}
                   </div>
                 </article>
-                {isExpanded && (
+                {isExpanded && document.file && (
                   <div className="document-inline-preview">
                     <iframe src={documentUrl(document.file)} title={`Visualização de ${document.title}`} />
                     <p>
