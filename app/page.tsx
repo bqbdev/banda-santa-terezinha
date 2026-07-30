@@ -194,12 +194,11 @@ const documents = [
 ];
 
 const activities = [
-  ["01", "Musicalização", "Aulas de iniciação musical que desenvolvem escuta, ritmo, coordenação e expressão desde os primeiros contatos com a música."],
-  ["02", "Flauta doce", "Oficina coletiva que une leitura musical, prática instrumental e convivência em grupo para crianças e adolescentes."],
-  ["03", "Coral infantojuvenil", "Formação vocal, repertório coletivo e apresentações que fortalecem a confiança e o sentimento de pertencimento."],
-  ["04", "Prática instrumental", "Orientação teórica e prática em madeiras, metais e percussão, com acompanhamento de educadores musicais."],
-  ["05", "Banda Escola", "Etapa de formação para novos instrumentistas, com ensaios quinzenais e preparação para integrar a banda principal."],
-  ["06", "Concertos e recitais", "Apresentações em Mogi Guaçu e outras cidades, aproximando a comunidade da música instrumental e coral."],
+  ["01", "Musicalização com Flauta doce", "Oficina coletiva de iniciação musical que desenvolve escuta, ritmo, coordenação, leitura musical, prática de flauta doce e convivência em grupo para crianças e adolescentes."],
+  ["02", "Coral infantojuvenil", "Formação vocal, repertório coletivo e apresentações que fortalecem a confiança e o sentimento de pertencimento."],
+  ["03", "Prática instrumental", "Orientação teórica e prática em madeiras, metais e percussão, com acompanhamento de educadores musicais."],
+  ["04", "Banda Escola", "Etapa de formação para novos instrumentistas, com ensaios quinzenais e preparação para integrar a banda principal."],
+  ["05", "Concertos e recitais", "Apresentações em Mogi Guaçu e outras cidades, aproximando a comunidade da música instrumental e coral."],
 ];
 
 export default function Home() {
