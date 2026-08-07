@@ -207,6 +207,42 @@ const documents: TransparencyDocument[] = [
     meta: "Parceria pública · 2024",
   },
   {
+    category: "Prestação de Contas",
+    title: "Prestação de Contas — Janeiro/2026",
+    file: "Prestacao de Contas - Janeiro 2026.pdf",
+    meta: "Referente a janeiro de 2026",
+  },
+  {
+    category: "Prestação de Contas",
+    title: "Prestação de Contas — Fevereiro/2026",
+    file: "Prestacao de Contas - Fevereiro 2026.pdf",
+    meta: "Referente a fevereiro de 2026",
+  },
+  {
+    category: "Prestação de Contas",
+    title: "Prestação de Contas — Março/2026",
+    file: "Prestacao de Contas - Marco 2026.pdf",
+    meta: "Referente a março de 2026",
+  },
+  {
+    category: "Prestação de Contas",
+    title: "Prestação de Contas — Abril/2026",
+    file: "Prestacao de Contas - Abril 2026.pdf",
+    meta: "Referente a abril de 2026",
+  },
+  {
+    category: "Prestação de Contas",
+    title: "Prestação de Contas — Maio/2026",
+    file: "Prestacao de Contas - Maio 2026.pdf",
+    meta: "Referente a maio de 2026",
+  },
+  {
+    category: "Prestação de Contas",
+    title: "Prestação de Contas — Junho/2026",
+    file: "Prestacao de Contas - Junho 2026.pdf",
+    meta: "Referente a junho de 2026",
+  },
+  {
     category: "Emendas Parlamentares",
     title: "Termo de Aditamento 03/2025",
     file: "04 - TERMO DE ADITAMENTO 03 2025.pdf",
